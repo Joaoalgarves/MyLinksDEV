@@ -72,7 +72,7 @@ body * {
   background: white var(--switch) no-repeat center;
   border-radius: 50%;
   border: 0;
-
+  animation: slide-back 0.3s forwards;
   position: absolute;
   top: 50%;
   left: 0;
@@ -81,8 +81,7 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.3s forwards;
 }
 
 #switch span {
@@ -93,6 +92,24 @@ body * {
   border: 1px solid var(--stroke-color);
   border-radius: 9999px;
   backdrop-filter: blur(4px);
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 ul {
